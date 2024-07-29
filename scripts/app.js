@@ -10,6 +10,18 @@ $(document).ready(function() {
         searchMovies(query, currentPage);
     });
 
+    $('#view-grid').on('click', function() {
+        view = 'grid';
+        $('#search-results').removeClass('view-list').addClass('view-grid');
+        searchMovies(query, currentPage);
+    });
+
+    $('#view-list').on('click', function() {
+        view = 'list';
+        $('#search-results').removeClass('view-grid').addClass('view-list');
+        searchMovies(query, currentPage);
+    });
+
     $('#favorites-button').on('click', function() {
         toggleSection('#favorites-list');
     });
@@ -43,8 +55,7 @@ $(document).ready(function() {
     }
 
     function setupPagination(totalPages) {
-        $('#pagination').remove();
-        const pagination = $('<div id="pagination"></div>');
+        $('#pagination').empty();
         for (let i = 1; i <= totalPages; i++) {
             const pageLink = $(`<button>${i}</button>`);
             if (i === currentPage) pageLink.addClass('active');
@@ -52,26 +63,16 @@ $(document).ready(function() {
                 currentPage = i;
                 searchMovies(query, currentPage);
             });
-            pagination.append(pageLink);
+            $('#pagination').append(pageLink);
         }
-        $('main').append(pagination);
     }
 
     $('#search-results').on('click', '.movie', function() {
         const movieId = $(this).data('id');
         $.getJSON(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=credits,reviews`, function(data) {
             const html = Mustache.render(templates.movieDetails, data);
-            $('#movie-details').html(html);
+            $('#movie-details').html(html).removeClass('hidden');
             toggleSection('#movie-details');
-        });
-    });
-
-    $('#movie-details').on('click', '.cast-member', function() {
-        const personId = $(this).data('id');
-        $.getJSON(`https://api.themoviedb.org/3/person/${personId}?api_key=${apiKey}`, function(data) {
-            const html = Mustache.render(templates.personDetails, data);
-            $('#person-details').html(html);
-            toggleSection('#person-details');
         });
     });
 
