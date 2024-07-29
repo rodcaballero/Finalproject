@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMWNiODNmMjQ1YmY0YWJjNWQ4YWQwMWRiOTQ2NjE4YiIsIm5iZiI6MTcyMjIxMjc5Ni4wODE4MjcsInN1YiI6IjY2YTZlMGQyOWY1YTI2M2U1NjA1YWJmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vubVMqF1RH5YseIJ6he2o2GyPSgBNqrDSIER4bWmqlw';
+    const apiKey = '31cb83f245bf4abc5d8ad01db946618b';
     const resultsPerPage = 10;
     let currentPage = 1;
     let query = '';
