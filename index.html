@@ -11,6 +11,8 @@
         <h1>Movie Database</h1>
         <input type="text" id="search-bar" placeholder="Search for movies or TV shows...">
         <button id="search-button">Search</button>
+        <button id="view-grid">Grid View</button>
+        <button id="view-list">List View</button>
         <button id="favorites-button">Favorites</button>
         <button id="watchlist-button">Watchlist</button>
     </header>
@@ -19,10 +21,11 @@
         <div id="movie-details" class="hidden"></div>
         <div id="favorites-list" class="hidden"></div>
         <div id="watchlist" class="hidden"></div>
+        <div id="pagination" class="pagination"></div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js"></script>
-    <script src="scripts/app.js"></script>
     <script src="scripts/templates.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>
