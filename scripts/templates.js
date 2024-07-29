@@ -41,4 +41,3 @@ const templates = {
         </ul>
     `
 };
-
