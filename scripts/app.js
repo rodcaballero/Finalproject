@@ -74,4 +74,16 @@ $(document).ready(function() {
             $('#movie-details').html(html).removeClass('hidden');
             toggleSection('#movie-details');
         });
-   
+    });
+
+    function displayFavorites() {
+        // Fetch and display user's favorite movies
+    }
+
+    function displayWatchlist() {
+        // Fetch and display user's watchlist
+    }
+
+    displayFavorites();
+    displayWatchlist();
+});
