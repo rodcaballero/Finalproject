@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database App</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Database</h1>
+        <input type="text" id="search-bar" placeholder="Search for movies or TV shows...">
+        <button id="search-button">Search</button>
+        <button id="favorites-button">Favorites</button>
+        <button id="watchlist-button">Watchlist</button>
+    </header>
+    <main>
+        <div id="search-results" class="view-grid"></div>
+        <div id="movie-details" class="hidden"></div>
+        <div id="favorites-list" class="hidden"></div>
+        <div id="watchlist" class="hidden"></div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/templates.js"></script>
+</body>
+</html>
